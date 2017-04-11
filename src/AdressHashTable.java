@@ -12,8 +12,6 @@ public class AdressHashTable<T1, T2> implements HashTable3<T1, T2> {
     }
 
     public boolean push(T1 balance, T1 income, T1 outcome, T2 account, T2 txid) {
-        //table[getHash(account)] = new Node<T1,T2,T3,T4,T5>(balance, income, outcome, account, txid);
-        //return true;
 
         int h = getHash(account);
         int i = 0;
