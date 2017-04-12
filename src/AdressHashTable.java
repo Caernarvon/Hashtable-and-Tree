@@ -2,8 +2,8 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-public class AdressHashTable<T1, T2> implements HashTable3<T1, T2> {
+//Generic open adress hashtable class, includes interface methods and getHash method.
+public class AdressHashTable<T1, T2> implements HashTable<T1, T2> {
     private Node<T1, T2>[] table;
     private final int DEFAULT_SIZE = 11000;
 
@@ -12,7 +12,6 @@ public class AdressHashTable<T1, T2> implements HashTable3<T1, T2> {
     }
 
     public boolean push(T1 balance, T1 income, T1 outcome, T2 account, T2 txid) {
-
         int h = getHash(account);
         int i = 0;
 
@@ -34,10 +33,7 @@ public class AdressHashTable<T1, T2> implements HashTable3<T1, T2> {
             table[h] = new Node<T1, T2>(balance, income, outcome, account, txid);
             return true;
         }
-
-
         return false;
-
     }
 
     public boolean delete(T2 account) {
@@ -53,7 +49,6 @@ public class AdressHashTable<T1, T2> implements HashTable3<T1, T2> {
                 return true;
             }
         }
-
         return false;
     }
 
@@ -62,14 +57,11 @@ public class AdressHashTable<T1, T2> implements HashTable3<T1, T2> {
         if (table[h] != null && table[h].getAccount() == account && !table[h].isDeleted()) {
             return table[h].getAccount();
         }
-
-
         for (int i = h + 1; i != h; i = (i + 1) % table.length) {
             if(table[i] != null && (table[i].getAccount() == account && !table[i].isDeleted())) {
                 return table[h].getAccount();
             }
         }
-
         return null;
     }
 

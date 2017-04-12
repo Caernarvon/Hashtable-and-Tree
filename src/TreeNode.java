@@ -1,3 +1,4 @@
+//Tree node, it's includes setters and getters.
 public class TreeNode<T extends Comparable> {
     T key;
     TreeNode left, right;

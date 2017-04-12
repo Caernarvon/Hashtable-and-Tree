@@ -1,3 +1,4 @@
+//Hashtable node to work with banking operations, includes getters and constructor.
 public class Node<T1, T2> {
     private final T1 balance;
     private final T1 income;

@@ -1,7 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
+//Generic tree with find, insert, remove, print, getnodes and re-balancing methods.
 public class Tree<T extends Comparable> {
     private TreeNode root;
 
